@@ -22,12 +22,20 @@ yesBtn.addEventListener('click', () =>
 
 noBtn.addEventListener('click', () =>
     {
-        if(clickedCount === 0)
-        {
-            question.innerHTML = "That wasn't a question";
-            imag.src = "./Img/threaten_cat.jpg";
-            clickedCount++;
-        }
+        switch(clickedCount)
+            {
+                case 0:
+                    question.innerHTML = "That wasn't a question";
+                    imag.src = "./Img/threaten_cat.jpg";
+                    clickedCount++;
+                    break;
+                case 1:
+                    question.innerHTML = "Pleasee";
+                    imag.src = "./Img/cuddles.jpg"
+                    clickedCount++;
+                    break;
+            }
+        if(clickedCount>=2) question.innerHTML+="e";
         const i = Math.floor(Math.random()*(wrapperRect.width-noBtnRect.width))+1;
         const j = Math.floor(Math.random()*(wrapperRect.height-noBtnRect.height))+1;
 
